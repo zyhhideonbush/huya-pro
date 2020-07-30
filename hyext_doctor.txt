@@ -1,0 +1,221 @@
+npm 相关配置
+; cli configs
+metrics-registry = "https://registry.npmjs.org/"
+scope = ""
+user-agent = "npm/6.4.1 node/v10.12.0 win32 x64"
+
+; builtin config undefined
+prefix = "C:\\Users\\Curryyy\\AppData\\Roaming\\npm"
+
+; node bin location = C:\fordev\nodejs\node.exe
+; cwd = C:\workspace\workspace\MyProjects\react-letter\new-letter
+; HOME = C:\Users\Curryyy
+; "npm config ls -l" to show all defaults.
+
+
+
+=====================
+
+package.json
+{
+  "name": "new-letter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx hyext start",
+    "release": "npx hyext release",
+    "config": "npx hyext config",
+    "lint": "eslint --ignore-pattern 'node_modules' --ext .js ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@hyext/builder-beyond": "1.4.12",
+    "@hyext/cli": "^3.0.0"
+  },
+  "dependencies": {
+    "@hyext-beyond/core": "2.0.4",
+    "@hyext/hy-ui": "1.3.12",
+    "@hyext/hyext-rn-sdk": "1.11.0",
+    "@hyext/hyliveext-rn-sdk": "1.10.0"
+  }
+}
+
+=====================
+
+project.config.json
+{
+  "name": "new-letter",
+  "outputPath": "dist",
+  "releasePath": "release",
+  "ignore": [
+    "*.md",
+    "LICENSE",
+    ".git/**",
+    ".gitignore",
+    "package-lock.json"
+  ],
+  "builder": {
+    "name": "@hyext/builder-beyond",
+    "config": {
+      "webSDKVersion": "latest",
+      "webTitle": "虎牙小程序",
+      "designWidth": 750,
+      "https": true,
+      "host": "localhost",
+      "port": 18080,
+      "enableLint": {
+        "stylelint": false,
+        "eslint": false
+      },
+      "useCssLoader": true,
+      "buildConfig": {
+        "RN": [
+          {
+            "entry": "index.js",
+            "extType": "app_panel",
+            "platform": "app",
+            "registerComponent": [
+              "new-letter"
+            ]
+          }
+        ],
+        "H5": [
+          {
+            "entry": "index_streamer.js",
+            "extType": "pc_anchor_panel",
+            "platform": "pc"
+          },
+          {
+            "entry": "index.js",
+            "extType": "pc_panel",
+            "platform": "pc"
+          },
+          {
+            "entry": "index.js",
+            "extType": "web_video_com",
+            "platform": "web"
+          }
+        ]
+      }
+    }
+  }
+}
+
+
+=====================
+
+已安装的 node_modules
+new-letter@1.0.0 C:\workspace\workspace\MyProjects\react-letter\new-letter
++-- @hyext-beyond/core@2.0.4
++-- @hyext/builder-beyond@1.4.12
++-- @hyext/cli@3.0.0
++-- @hyext/hy-ui@1.3.12
++-- @hyext/hyext-rn-sdk@1.11.0
+`-- @hyext/hyliveext-rn-sdk@1.10.0
+
+
+
+=====================
+
+网络适配器列表
+{
+  "SSTAP 1": [
+    {
+      "address": "fe80::7857:d1b2:20c8:7829",
+      "netmask": "ffff:ffff:ffff:ffff::",
+      "family": "IPv6",
+      "mac": "00:ff:c7:00:92:01",
+      "scopeid": 20,
+      "internal": false,
+      "cidr": "fe80::7857:d1b2:20c8:7829/64"
+    },
+    {
+      "address": "26.26.26.1",
+      "netmask": "255.255.255.248",
+      "family": "IPv4",
+      "mac": "00:ff:c7:00:92:01",
+      "internal": false,
+      "cidr": "26.26.26.1/29"
+    }
+  ],
+  "VMware Network Adapter VMnet1": [
+    {
+      "address": "fe80::bdca:a912:ae3c:517c",
+      "netmask": "ffff:ffff:ffff:ffff::",
+      "family": "IPv6",
+      "mac": "00:50:56:c0:00:01",
+      "scopeid": 19,
+      "internal": false,
+      "cidr": "fe80::bdca:a912:ae3c:517c/64"
+    },
+    {
+      "address": "192.168.138.1",
+      "netmask": "255.255.255.0",
+      "family": "IPv4",
+      "mac": "00:50:56:c0:00:01",
+      "internal": false,
+      "cidr": "192.168.138.1/24"
+    }
+  ],
+  "VMware Network Adapter VMnet8": [
+    {
+      "address": "fe80::79e2:2404:cfcb:1c8e",
+      "netmask": "ffff:ffff:ffff:ffff::",
+      "family": "IPv6",
+      "mac": "00:50:56:c0:00:08",
+      "scopeid": 24,
+      "internal": false,
+      "cidr": "fe80::79e2:2404:cfcb:1c8e/64"
+    },
+    {
+      "address": "192.168.25.1",
+      "netmask": "255.255.255.0",
+      "family": "IPv4",
+      "mac": "00:50:56:c0:00:08",
+      "internal": false,
+      "cidr": "192.168.25.1/24"
+    }
+  ],
+  "Loopback Pseudo-Interface 1": [
+    {
+      "address": "::1",
+      "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+      "family": "IPv6",
+      "mac": "00:00:00:00:00:00",
+      "scopeid": 0,
+      "internal": true,
+      "cidr": "::1/128"
+    },
+    {
+      "address": "127.0.0.1",
+      "netmask": "255.0.0.0",
+      "family": "IPv4",
+      "mac": "00:00:00:00:00:00",
+      "internal": true,
+      "cidr": "127.0.0.1/8"
+    }
+  ],
+  "WLAN": [
+    {
+      "address": "fe80::119d:bab2:229a:4101",
+      "netmask": "ffff:ffff:ffff:ffff::",
+      "family": "IPv6",
+      "mac": "34:41:5d:4c:93:b6",
+      "scopeid": 21,
+      "internal": false,
+      "cidr": "fe80::119d:bab2:229a:4101/64"
+    },
+    {
+      "address": "192.168.0.45",
+      "netmask": "255.255.255.0",
+      "family": "IPv4",
+      "mac": "34:41:5d:4c:93:b6",
+      "internal": false,
+      "cidr": "192.168.0.45/24"
+    }
+  ]
+}
